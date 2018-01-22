@@ -1,7 +1,7 @@
 package com.srigith.ds.tree;
 
 public class MaxPathSum {
-    public int getMaxPathSum(Node root) {
+    public int getMaxPathSum(BinaryNode root) {
         if(root == null) {
             return 0;
         }
@@ -10,7 +10,7 @@ public class MaxPathSum {
     }
     
     public int maxPathSum = Integer.MIN_VALUE;
-    private int getMaxPathSumRec(Node node){
+    private int getMaxPathSumRec(BinaryNode node){
         if(node==null)
             return 0;
         
@@ -47,26 +47,26 @@ public class MaxPathSum {
 	public static void main (String[] args) {
 		MaxPathSum obj = new MaxPathSum();
 		
-		Node root = new Node(10);
-		root.left = new Node(2);
-		root.right = new Node(10);
-		root.left.left = new Node(20);
-		root.left.right = new Node(1);
-		root.right.right = new Node(-25);
-		root.right.right.left = new Node(3);
-		root.right.right.right = new Node(4);
+		BinaryNode root = new BinaryNode(10);
+		root.left = new BinaryNode(2);
+		root.right = new BinaryNode(10);
+		root.left.left = new BinaryNode(20);
+		root.left.right = new BinaryNode(1);
+		root.right.right = new BinaryNode(-25);
+		root.right.right.left = new BinaryNode(3);
+		root.right.right.right = new BinaryNode(4);
 		
 		obj.getMaxPathSum(root);
 		System.out.println(obj.maxPathSum);
 	}
 }
 
-class Node {
-    Node left;
-    Node right;
+class BinaryNode {
+	BinaryNode left;
+	BinaryNode right;
     int data;
     
-    public Node(int data) {
+    public BinaryNode(int data) {
         this.data=data;
     }
 }
